@@ -1,9 +1,12 @@
-
-[![Build Status](https://travis-ci.{{com_or_org}}/{{travis_username}}/{{library_name}}.svg?branch=master)](https://travis-ci.{{com_or_org}}/{{travis_username/{{library)
+<!--- The following badges don't work because they're templated... uncomment when filled out
+[![Build Status](https://travis-ci.{{com_or_org}}/{{travis_username}}/{{library_name}}.svg?branch=master)](https://travis-ci.{{com_or_org}}/{{travis_username}}/{{library_name}})
 [![codecov](https://codecov.io/gh/{{codecov_username}}/{{library_name}}/branch/master/graph/badge.svg)](https://codecov.io/gh/{{codecov_username}}/{{library_name}})
-[![Documentation Status](https://readthedocs.org/projects/{{library_name}}/badge/?version=latest)](https://library_name}}.readthedocs.io/en/latest/?badge=latest)
+[![Documentation Status](https://readthedocs.org/projects/{{library_name}}/badge/?version=latest)](https://{{library_name}}.readthedocs.io/en/latest/?badge=latest)
+--->
+
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 [![black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
+[![black-girls-code](https://img.shields.io/badge/black%20girls-code-f64279.svg)](https://www.blackgirlscode.com/)
 
 
 # Python Library Template
