@@ -9,9 +9,10 @@
 # Python Library Template
 A github template for an up to date python library, featuring:
  - black style
- - sphinx docs
+ - sphinx docs with some examples and automatic build
  - pre-commit hooks
- - 
+ - travis deploy
+ - code coverage
 
 ## Developer notes
 
@@ -35,8 +36,17 @@ Once that's done, each time you make a commit, the following checks are made:
 
 Upon failure, the commit will halt. **Re-running the commit will automatically fix most issues** except:
 
-- The flake8 checks... hopefully over time Black (which fixes most things automatically) will subsume flake8.
+- The flake8 checks... hopefully over time Black (which fixes most things automatically already) will negate need for it.
 - You'll have to fix documentation yourself prior to a successful commit (there's no auto fix for that!!).
+
+You can run pre-commit hooks without making a commit, too, like:
+```
+pre-commit run black --all-files
+```
+or
+```
+pre-commit run build-docs
+```
 
 
 ### Contributing
@@ -87,9 +97,9 @@ The process for creating a new release is as follows:
 ### Building documents automatically
 
 The documentation will build automatically in a pre-configured environment when you make a commit.
- 
+
 In fact, the way pre-commit works, you won't be allowed to make the commit unless the documentation builds,
-this way we avoid getting broken documentation pushed to the main repository on any commit sha, so we can rely on 
+this way we avoid getting broken documentation pushed to the main repository on any commit sha, so we can rely on
 builds working.
 
 
