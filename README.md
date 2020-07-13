@@ -17,6 +17,13 @@ A github template for an up to date python library, featuring:
  - travis deploy
  - code coverage
 
+## Getting started
+
+1. Click 'use this template' to the top right, and away you go.
+2. Search for `{{` in the codebase and docs. Do serach and replace for the various terms - it's obvious what they are, like replace `{{github_username}}` with your github username!
+3. Set up the license you need in `LICENSE`
+4. If you need to deploy to pypi, you have to do the first deploy manually - travis can't do that for you. [See the packaging instructions](https://packaging.python.org/tutorials/distributing-packages/#uploading-your-project-to-pypi).
+
 ## Developer notes
 
 **Documentation for use of the library is [here](https://{{library_name}}.readthedocs.io). You don't need to pay attention to the following unless you plan to develop {{library_name}} itself.**
