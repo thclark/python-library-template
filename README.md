@@ -14,7 +14,9 @@ A github template for an up to date python library, featuring:
  - black style
  - sphinx docs with some examples and automatic build
  - pre-commit hooks
- - travis deploy
+ - some example code for newer pythonistas
+ - tox tests
+ - travis ci + cd
  - code coverage
 
 ## Developer notes
