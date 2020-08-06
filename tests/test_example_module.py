@@ -15,13 +15,6 @@ class TestExampleModule(BaseTestCase):
         test_data_file = self.path + "test_data/.json"
         ExampleModule()
 
-    def test_broken_json_twine(self):
-        """ Ensures that an invalid json file raises an InvalidTwine exception
-        """
-        twine_file = self.path + "twines/invalid_json_twine.json"
-        with self.assertRaises(exceptions.InvalidTwineJson):
-            Twine(file=twine_file)
-
 
 if __name__ == "__main__":
     unittest.main()
