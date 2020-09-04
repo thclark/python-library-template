@@ -1,5 +1,4 @@
 exclude: 'build|docs|node_modules|.git|.tox|dist|docs|{{library_name}}.egg-info'
-include: '{{library_name}}'
 default_stages: [commit]
 fail_fast: true
 default_language_version:
@@ -11,7 +10,8 @@ repos:
       - id: trailing-whitespace
       - id: end-of-file-fixer
       - id: check-yaml
-        language_version: python3
+      - id: check-json
+      - id: check-added-large-files
 
   - repo: https://github.com/pre-commit/mirrors-isort
     rev: v4.3.21
@@ -37,3 +37,19 @@ repos:
     hooks:
       - id: build-docs
         language_version: python3
+
+  - repo: https://github.com/windpioneers/pre-commit-hooks
+    rev: 0.0.5
+    hooks:
+      - id: check-branch-name
+        language_version: python3
+        args:
+          - '^master$'
+          - '^development$'
+          - '^devops/([a-z][a-z0-9]*)(-[a-z0-9]+)*$'
+          - '^doc/([a-z][a-z0-9]*)(-[a-z0-9]+)*$'
+          - '^feature/([a-z][a-z0-9]*)(-[a-z0-9]+)*$'
+          - '^fix/([a-z][a-z0-9]*)(-[a-z0-9]+)*$'
+          - '^hotfix/([a-z][a-z0-9]*)(-[a-z0-9]+)*$'
+          - '^review/([a-z][a-z0-9]*)(-[a-z0-9]+)*$'
+          - '^release/(?P<major>0|[1-9]\d*)\.(?P<minor>0|[1-9]\d*)\.(?P<patch>0|[1-9]\d*)(?:-(?P<prerelease>(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+(?P<buildmetadata>[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$'
