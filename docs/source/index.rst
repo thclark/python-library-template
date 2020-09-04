@@ -46,5 +46,6 @@ Insert your personal rant here...
    installation
    quick_start
    example_chapter
+   api
    license
    version_history

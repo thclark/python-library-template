@@ -11,12 +11,13 @@
 # serve to show the default.
 
 import os
+import sys
 import sphinx_rtd_theme
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
-# sys.path.insert(0, os.path.abspath('.'))
+sys.path.insert(0, os.path.abspath('../..'))
 
 # -- General configuration -----------------------------------------------------
 
@@ -28,12 +29,14 @@ import sphinx_rtd_theme
 # Breate and exhale are added as recommended by:
 #   https://exhale.readthedocs.io/en/latest/usage.html#usage-quickstart-guide
 extensions = [
+    'sphinx.ext.autodoc',
+    'sphinx.ext.doctest',
     'sphinx.ext.todo',
+    'sphinx.ext.coverage',
+    'sphinx.ext.viewcode',
     'sphinx_tabs.tabs',
     'sphinx.ext.mathjax',
     'sphinx.ext.ifconfig',
-    'breathe',
-    'exhale'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -91,40 +94,10 @@ exclude_patterns = []
 # show_authors = False
 
 # The name of the Pygments (syntax highlighting) style to use.
-pygments_style = 'sphinx'
+pygments_style = None
 
 # A list of ignored prefixes for module index sorting.
 # modindex_common_prefix = []
-
-# -- Breathe and Exhale Configuration ------------------------------------------
-
-# Setup the breathe extension
-breathe_projects = {
-    "My Project": "./doxyoutput/xml"
-}
-breathe_default_project = "My Project"
-
-# Setup the exhale extension
-exhale_args = {
-    # These arguments are required
-    "containmentFolder":     "./library_api",
-    "rootFileName":          "library_root.rst",
-    "rootFileTitle":         "Library API",
-    "doxygenStripFromPath":  "../../",
-    # Suggested optional arguments
-    "createTreeView":        True,
-    # TIP: if using the sphinx-bootstrap-theme, you need
-    # "treeViewIsBootstrap": True,
-    "exhaleExecutesDoxygen": True,
-    "exhaleDoxygenStdin":    "INPUT = ../../source"
-}
-
-# Tell sphinx what the primary language being documented is
-primary_domain = 'python'
-
-# Tell sphinx what the pygments highlight language should be
-highlight_language = 'python'
-
 
 # -- Options for HTML output ---------------------------------------------------
 
