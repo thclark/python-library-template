@@ -46,6 +46,7 @@ Once that's done, each time you make a commit, the following checks are made:
 - import order
 - PEP8 compliance
 - documentation build
+- branch naming convention
 
 Upon failure, the commit will halt. **Re-running the commit will automatically fix most issues** except:
 
@@ -58,7 +59,8 @@ pre-commit run black --all-files
 ```
 or
 ```
-pre-commit run build-docs
+# -v gives verbose output, useful for figuring out why docs won't build
+pre-commit run build-docs -v
 ```
 
 
@@ -67,7 +69,7 @@ pre-commit run build-docs
 - Please raise an issue on the board (or add your $0.02 to an existing issue) so the maintainers know
 what's happening and can advise / steer you.
 
-- Create a fork of {{library_name}}, undertake your changes on a new branch, named like *issue-84* or similar. To run tests and make commits,
+- Create a fork of {{library_name}}, undertake your changes on a new branch, (see `.pre-commit-config.yaml` for branch naming conventions). To run tests and make commits,
 you'll need to do something like:
 ```
 git clone <your_forked_repo_address>    # fetches the repo to your local machine
