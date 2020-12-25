@@ -44,7 +44,7 @@ repos:
       - id: check-branch-name
         language_version: python3
         args:
-          - '^master$'
+          - '^main$'
           - '^development$'
           - '^devops/([a-z][a-z0-9]*)(-[a-z0-9]+)*$'
           - '^doc/([a-z][a-z0-9]*)(-[a-z0-9]+)*$'
